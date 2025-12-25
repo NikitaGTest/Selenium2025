@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="MyTestSuit"  thread-count="5">
+
+    <!-- ✅ groups should come first -->
+    <groups>
+        <run>
+            <include name="purchaseOrder"/>
+        </run>
+    </groups>
+    <parameter name="url" value="testing"></parameter>
+    <!-- ✅ listeners come after groups -->
+    <listeners>
+        <listener class-name="com.practiceApp.testcomponents.Listners"/>
+    </listeners>
+
+    <test name="Submit Order Test" thread-count="5">
+        <classes>
+            <class name="com.practiceApp.tests.SubmitOrderTest"/>
+        </classes>
+        
+    </test>
+   
+
+    <test name="Error Validation Test" thread-count="5">
+        <classes>
+            <class name="com.practiceApp.tests.ErrorValidation"/>
+        </classes>
+    </test>
+
+</suite>
