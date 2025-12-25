@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite parallel="classes" name="Suite" thread-count="5">
+
+	<!-- ✅ listeners come after groups -->
+	<listeners>
+		<listener class-name="com.practiceApp.testcomponents.Listners" />
+	</listeners>
+
+	<test name="Error Validation Test" thread-count="5">
+		<classes>
+			<class name="com.practiceApp.tests.ErrorValidation">
+				<methods>
+					<include name="validatedLoginErrorMsg"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Amazon App Run">
+
+		<classes>
+			<class name="com.practiceApp.tests.OpenAmazonApp"></class>
+
+
+		</classes>
+	</test>
+	<parameter name="productName" value="dresses"></parameter>
+	<test name="Myntra App Run">
+
+		<classes>
+			<class name="com.practiceApp.tests.OpenMyntraApp"></class>
+
+
+		</classes>
+	</test>
+</suite>
